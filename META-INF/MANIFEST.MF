@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AutoMergeGit
+Bundle-SymbolicName: AutoMergeGit;singleton:=true
+Bundle-Version: 1.0
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.jface,
+ org.eclipse.jgit,
+ org.eclipse.equinox.registry,
+ org.eclipse.e4.core.di.annotations,
+ org.eclipse.e4.ui.model.workbench,
+ org.eclipse.equinox.preferences,
+ org.eclipse.ui.workbench
+Automatic-Module-Name: AutoMergeGit
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: .,
+ swing2swt.jar
