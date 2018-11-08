@@ -94,7 +94,7 @@ public class CommitList {
 			public void mouseUp(MouseEvent e) {
 				if(!text.getText().isEmpty()) {
 					String pathToGitProject = PlatformUI.getPreferenceStore().getString(PreferenceConstants.P_STRING);
-					tableViewer.setInput(GitConnector.findCommitByNameAndBranch(pathToGitProject, listBranch,text.getText()));
+					//tableViewer.setInput(GitConnector.findCommitByNameAndBranch(pathToGitProject, listBranch,text.getText()));
 					tableViewer.refresh();
 				}
 			}

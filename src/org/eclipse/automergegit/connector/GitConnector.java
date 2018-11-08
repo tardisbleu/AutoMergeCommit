@@ -44,12 +44,12 @@ public class GitConnector {
 		return vBranchGit;
 	}
 	
-	public static Vector<CommitGit> findCommitByNameAndBranch(String sGitDir, String[] listBranchName, String name){
+	public static Vector<CommitGit> findCommitByNameAndBranch(String sGitDir, Vector<BranchGit> pvBranchGit, String name){
 		Vector<CommitGit> vCommitGit = new Vector<>();
 		try {
 			Git oGit = new Git(getRepository(sGitDir));
-			for (String branchName : listBranchName) {
-				for (RevCommit commit : oGit.log().add(getRepository(sGitDir).resolve(branchName)).call()) {
+			for (BranchGit oBranchCommit : pvBranchGit) {
+				for (RevCommit commit : oGit.log().add(getRepository(sGitDir).resolve(oBranchCommit.getName())).call()) {
 					if(commit.getShortMessage().contains(name)) {
 						vCommitGit.add(new CommitGit(commit.getId(),commit.getShortMessage(),commit.getAuthorIdent().getName()));
 					}

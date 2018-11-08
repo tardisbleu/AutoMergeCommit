@@ -6,6 +6,7 @@ package org.eclipse.automergegit.display;
 import java.util.Vector;
 
 import org.eclipse.automergegit.model.BranchGit;
+import org.eclipse.automergegit.model.CommitGit;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 
@@ -29,11 +30,13 @@ public class AutoCherryPick extends Wizard {
 	protected AutoCherryPickPage4 p4;
 	protected String locationOfGitProject;
 	protected Vector<BranchGit> vBranchGit;
+	protected Vector<CommitGit> vCommitGit;
 
 	public AutoCherryPick() {
         super();
         setNeedsProgressMonitor(true);
         vBranchGit = new Vector<>();
+        vCommitGit = new Vector<>();
         locationOfGitProject = "";
     }
 
@@ -65,11 +68,31 @@ public class AutoCherryPick extends Wizard {
 		this.locationOfGitProject = locationOfGitProject;
 	}
 	
-	public void addBranch(BranchGit pBranchGit) {
+	public void addBranchGit(BranchGit pBranchGit) {
 		vBranchGit.add(pBranchGit);
 	}
-	public void clearBranch() {
+	public void clearvBranchGit() {
 		vBranchGit.clear();
 	}
+	public Vector<BranchGit> getvBranchGit() {
+		return vBranchGit;
+	}
+	public void setvBranchGit(Vector<BranchGit> vBranchGit) {
+		this.vBranchGit = vBranchGit;
+	}
+	
+	public void addCommitGit(CommitGit pCommitGit) {
+		vCommitGit.add(pCommitGit);
+	}
+	public void clearvCommitGit() {
+		vCommitGit.clear();
+	}
+	public Vector<CommitGit> getvCommitGit() {
+		return vCommitGit;
+	}
+	public void setvCommitGit(Vector<CommitGit> vCommitGit) {
+		this.vCommitGit = vCommitGit;
+	}
+	
 
 }

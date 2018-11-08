@@ -95,7 +95,7 @@ public class AutoCherryPickPage2 extends WizardPage {
 		BranchTableProvider oBranchTableProvider = new BranchTableProvider();
 		tableViewer.setContentProvider(oBranchTableProvider);
 		tableViewer.setLabelProvider(oBranchTableProvider);
-		oAutoCherryPick.clearBranch();
+		oAutoCherryPick.clearvBranchGit();
 		setControl(container);
 	}
 	
@@ -105,7 +105,7 @@ public class AutoCherryPickPage2 extends WizardPage {
 		IStructuredSelection listIStructuredSelection = (IStructuredSelection) tableViewer.getSelection();
 		if(!listIStructuredSelection.isEmpty()) {
 			for (Iterator<BranchGit> iterator = listIStructuredSelection.iterator(); iterator.hasNext();) {
-				oAutoCherryPick.addBranch(iterator.next());
+				oAutoCherryPick.addBranchGit(iterator.next());
 			}
 		}
 		return super.getNextPage();
